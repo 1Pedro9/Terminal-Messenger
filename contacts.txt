@@ -1,0 +1,4 @@
+# This is a comment
+# id:Username:email:phone number
+1:1Pedro9:basson.pedro@gmail.com:0718192428
+2:SaucyMayo:mayo@gmail.com:0812428569
