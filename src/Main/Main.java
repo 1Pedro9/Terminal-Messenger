@@ -42,22 +42,22 @@ public class Main extends JFrame implements Runnable {
 
         setTitle("Terminal Messenger ~ Chari");
 
-        chat = new Chat(); // ✅ Create Chat before JScrollPane
-        scroll = new JScrollPane(chat); // ✅ Correct way to initialize
+        chat = new Chat();
+        scroll = new JScrollPane(chat);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
         scroll.setBorder(null);
 
         scroll.addMouseWheelListener(e -> {
             JScrollBar bar = scroll.getVerticalScrollBar();
             int rotation = e.getWheelRotation();
-            int amount = 3 * bar.getUnitIncrement(); // Make it scroll 3x faster
+            int amount = 3 * bar.getUnitIncrement();
             bar.setValue(bar.getValue() + rotation * amount);
         });
 
-        add(scroll, BorderLayout.CENTER); // ✅ Add scroll pane (not chat)
+        add(scroll, BorderLayout.CENTER);
 
-        pack();     // Move this here
-        start();    // Start render loop after everything is ready
+        pack();
+        start();
     }
 
 
@@ -90,7 +90,7 @@ public class Main extends JFrame implements Runnable {
 
         switch (state) {
             case STATE.chat:
-                chat.render(); // ✅ Only update chat content
+                chat.render();
                 break;
             case STATE.home:
                 // Implement if needed
